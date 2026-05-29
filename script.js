@@ -98,9 +98,9 @@
     }
 
     // Simulate submission (replace with actual endpoint / Zapier webhook)
-    const btn = form.querySelector('[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
+const btn = form.querySelector('[type="submit"]');
+btn.textContent = 'Sending…';
+btn.disabled = true;
 
     setTimeout(() => {
       wrap.style.display = 'none';
