@@ -98,10 +98,30 @@
     }
 
     // Simulate submission (replace with actual endpoint / Zapier webhook)
-const btn = form.querySelector('[type="submit"]');
-btn.textContent = 'Sending…';
-btn.disabled = true;
+    const btn = form.querySelector('[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
 
+    // Gather form data
+    const data = {
+      full_name: form.fullName.value.trim(),
+      email: form.email.value.trim(),
+      phone: form.phone.value.trim(),
+      role: form.role.value.trim(),
+      why_here: form.whyHere.value.trim(),
+      tried_what: form.triedWhat.value.trim(),
+      readiness_score: form.readiness.value,
+      referral: form.referral.value.trim(),
+      submitted_at: new Date().toISOString()
+    };
+
+    // Send to Zapier webhook
+    fetch('https://hooks.zapier.com/hooks/catch/27428853/4ovxknj/', {
+      method: 'POST',
+      body: JSON.stringify(data)
+    }).catch(err => console.error('Webhook error:', err));
+
+    // Show success message
     setTimeout(() => {
       wrap.style.display = 'none';
       success.style.display = 'block';
