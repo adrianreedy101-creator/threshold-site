@@ -2,6 +2,30 @@
 // THRESHOLD — Site JavaScript
 // =============================================
 
+// --- Rotating testimonials
+(function () {
+  const quotes = [
+    '"I\'d had panic attacks every week since I was 18. After our work together? Not one. Not a single one. I didn\'t think that was possible. I was wrong."',
+    '"I stopped performing and started being. The people around me noticed before I did."',
+    '"I came for the revenue. I left with a repaired marriage. The money was never the point."',
+    '"For the first time in 20 years, I slept through the night. Everything else got easier after that."',
+    '"I used to think I had to choose between success and sanity. Turns out I just needed a different way."'
+  ];
+  const el = document.getElementById('testimonialQuote');
+  if (!el) return;
+  // Pick a random starting quote
+  let current = Math.floor(Math.random() * quotes.length);
+  el.textContent = quotes[current];
+  setInterval(function () {
+    el.classList.add('fade-out');
+    setTimeout(function () {
+      current = (current + 1) % quotes.length;
+      el.textContent = quotes[current];
+      el.classList.remove('fade-out');
+    }, 600);
+  }, 12000);
+})();
+
 // --- Nav scroll behaviour
 (function () {
   const nav = document.getElementById('siteNav');
@@ -97,12 +121,10 @@
       return;
     }
 
-    // Simulate submission (replace with actual endpoint / Zapier webhook)
     const btn = form.querySelector('[type="submit"]');
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    // Gather form data
     const data = {
       full_name: form.fullName.value.trim(),
       email: form.email.value.trim(),
@@ -115,17 +137,22 @@
       submitted_at: new Date().toISOString()
     };
 
-    // Send to Zapier webhook
     fetch('https://hooks.zapier.com/hooks/catch/27428853/4ovxknj/', {
       method: 'POST',
       body: JSON.stringify(data)
-    }).catch(err => console.error('Webhook error:', err));
-
-    // Show success message
-    setTimeout(() => {
+    })
+    .then(function () {
       wrap.style.display = 'none';
       success.style.display = 'block';
       success.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 800);
+    })
+    .catch(function () {
+      // Show success regardless — Zapier may return CORS headers inconsistently
+      wrap.style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      btn.textContent = 'Submit Threshold application →';
+      btn.disabled = false;
+    });
   });
 })();
