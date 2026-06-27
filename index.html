@@ -25,10 +25,10 @@
       </svg>
     </a>
     <div class="nav-links">
-  <a href="/apply.html" class="nav-link">Apply</a>
-  <a href="/about.html" class="nav-link">About</a>
-  <a href="https://themissinglink.one" class="nav-link">The Missing Link</a>
-</div>
+      <a href="apply.html" class="nav-link">Apply</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="the-missing-link.html" class="nav-link">The Missing Link</a>
+    </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -216,7 +216,7 @@
     <div style="position:absolute; inset:0; background-image:url('./assets/hero-3.png'); background-size:cover; background-position:center; opacity:0.12; pointer-events:none; z-index:0;"></div>
     <div class="container" style="position:relative; z-index:1;">
       <h2 class="section-display">What changes inside Threshold</h2>
-      <p style="text-align: center; font-style: italic; opacity: 0.6; font-size: var(--text-sm); margin-bottom: 3rem; max-width: 800px; margin-inline: auto; white-space: nowrap;">You don't just change what you do. You change how you feel while doing it.</p>
+      <p style="text-align: center; font-style: italic; opacity: 0.6; font-size: var(--text-sm); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">You don't just change what you do. You change how you feel while doing it.</p>
       <div class="results-grid">
 
         <!-- Health — Seed of Life -->
@@ -240,20 +240,24 @@
         <!-- Wealth — Metatron's Cube -->
         <div class="result-card">
           <div class="result-icon">
-            <svg viewBox="0 0 48 48" fill="none" stroke="#fcb141" stroke-width="0.7" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="3"/>
-              <circle cx="24" cy="14" r="3"/>
-              <circle cx="24" cy="34" r="3"/>
-              <circle cx="32.7" cy="19" r="3"/>
-              <circle cx="32.7" cy="29" r="3"/>
-              <circle cx="15.3" cy="19" r="3"/>
-              <circle cx="15.3" cy="29" r="3"/>
-              <line x1="24" y1="14" x2="32.7" y2="19"/><line x1="32.7" y1="19" x2="32.7" y2="29"/>
-              <line x1="32.7" y1="29" x2="24" y2="34"/><line x1="24" y1="34" x2="15.3" y2="29"/>
-              <line x1="15.3" y1="29" x2="15.3" y2="19"/><line x1="15.3" y1="19" x2="24" y2="14"/>
-              <line x1="24" y1="14" x2="24" y2="34"/>
-              <line x1="15.3" y1="19" x2="32.7" y2="29"/>
-              <line x1="32.7" y1="19" x2="15.3" y2="29"/>
+            <svg viewBox="0 0 48 48" fill="none" stroke="#fcb141" stroke-width="0.8" xmlns="http://www.w3.org/2000/svg">
+              <!-- Metatron's Cube — scaled to fill viewBox -->
+              <!-- Centre + 6 outer nodes on radius 10, outer ring radius 20 -->
+              <circle cx="24" cy="24" r="4"/>
+              <circle cx="24" cy="4" r="4"/>
+              <circle cx="24" cy="44" r="4"/>
+              <circle cx="41.3" cy="14" r="4"/>
+              <circle cx="41.3" cy="34" r="4"/>
+              <circle cx="6.7" cy="14" r="4"/>
+              <circle cx="6.7" cy="34" r="4"/>
+              <!-- Outer hexagon -->
+              <line x1="24" y1="4" x2="41.3" y2="14"/><line x1="41.3" y1="14" x2="41.3" y2="34"/>
+              <line x1="41.3" y1="34" x2="24" y2="44"/><line x1="24" y1="44" x2="6.7" y2="34"/>
+              <line x1="6.7" y1="34" x2="6.7" y2="14"/><line x1="6.7" y1="14" x2="24" y2="4"/>
+              <!-- Star diagonals -->
+              <line x1="24" y1="4" x2="24" y2="44"/>
+              <line x1="6.7" y1="14" x2="41.3" y2="34"/>
+              <line x1="41.3" y1="14" x2="6.7" y2="34"/>
             </svg>
           </div>
           <h3>Wealth</h3>
@@ -278,7 +282,7 @@
         <!-- Showing up -->
         <div class="result-card">
         <div class="result-icon">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#fcb141" stroke-width="0.7" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#fcb141" stroke-width="0.8" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24" cy="24" r="20"/>
             <line x1="24" y1="4" x2="24" y2="44" stroke-width="0.5" opacity="0.6"/>
             <line x1="4" y1="24" x2="44" y2="24" stroke-width="0.5" opacity="0.6"/>
@@ -336,138 +340,125 @@
   </section>
 
   <!-- FAQ -->
-<section class="section-faq fade-in">
-  <div class="container">
-    <div class="faq-grid">
-      <div class="faq-left">
-        <span class="faq-label">• FAQ</span>
-        <h2>Questions</h2>
-      </div>
-      <div class="faq-right">
-        <!-- NEW: What is The Missing Link? -->
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            What is The Missing Link?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>The Missing Link is a 1:1 values diagnostic and consultation. It maps what is actually driving your decisions, behaviours, and emotional patterns. It is the entry point to Threshold.</p>
-            <p>For most people, the assessment is enough. They leave with clarity and apply it themselves.</p>
-            <p>For some, it opens a door to something deeper. That's where Threshold comes in.</p>
-            <p><a href="https://themissinglink.one" class="faq-link">Learn more about The Missing Link →</a></p>
-          </div>
+  <section class="section-faq fade-in">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-left">
+          <span class="faq-label">&#9679; FAQ</span>
+          <h2>Questions</h2>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            What does Threshold cost?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Serious. If price is your first question, this is not for you. Qualified applicants receive full details on the discovery call.</p>
+        <div class="faq-right">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What does Threshold cost?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Serious. If price is your first question, this is not for you. Qualified applicants receive full details on the discovery call.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Do you have testimonials?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>We don't publish testimonials publicly. This work is deep, personal, and not a marketing prop.</p>
-            <p>That said, if you get deep into the process and need to hear from someone who's been through it before you commit, we can probably arrange a quiet conversation with a past client. No stage. No spotlight. Just two humans.</p>
-            <p>But honestly? Most people don't need it. They know within the first conversation whether this is for them. We're not here to sell. We're here to transform.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you have testimonials?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We don't publish testimonials publicly. This work is deep, personal, and not a marketing prop.</p>
+              <p>That said, if you get deep into the process and need to hear from someone who's been through it before you commit, we can probably arrange a quiet conversation with a past client. No stage. No spotlight. Just two humans.</p>
+              <p>But honestly? Most people don't need it. They know within the first conversation whether this is for them. We're not here to sell. We're here to transform.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            How is Threshold different from The Missing Link assessment?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>The Missing Link is the diagnostic door. Threshold is the 90-day intensive behind it. One is a snapshot. The other is a transformation.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How is Threshold different from The Missing Link assessment?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>The Missing Link is the diagnostic door. Threshold is the 90-day intensive behind it. One is a snapshot. The other is a transformation.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            How do I know if I'm ready?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>You're ready if you've achieved success by external measures, including trophies, titles, revenue, or wealth, and still feel an internal gap you can't explain. You're ready if you're tired of managing your limits and want to start removing them. You're ready if this page makes you uncomfortable in a way that feels like truth.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I know if I'm ready?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>You're ready if you've achieved success by external measures, including trophies, titles, revenue, or wealth, and still feel an internal gap you can't explain. You're ready if you're tired of managing your limits and want to start removing them. You're ready if this page makes you uncomfortable in a way that feels like truth.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            What does the 90-day commitment actually look like?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Weekly 90-minute sessions. Direct access between sessions for real-time decisions, breakdowns, and breakthroughs. Full integration support for 30 days post-intensive. You don't just learn. You change.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What does the 90-day commitment actually look like?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Weekly 90-minute sessions. Direct access between sessions for real-time decisions, breakdowns, and breakthroughs. Full integration support for 30 days post-intensive. You don't just learn. You change.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            What is the Diagnostic step, and am I committed to the full intensive if I do it?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>You complete the 15-minute Personal Values Assessment. Then we meet for a 1 to 2 hour consultation where I read your results with you.</p>
-            <p>This is where you see what's actually driving your successes, your ceilings, and your patterns.</p>
-            <p>If we both agree you're ready for the 90-day intensive, we continue. If not, I'll tell you directly. No commitment until that moment.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What is the Diagnostic step, and am I committed to the full intensive if I do it?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>You complete the 15-minute Personal Values Assessment. Then we meet for a 1 to 2 hour consultation where I read your results with you.</p>
+              <p>This is where you see what's actually driving your successes, your ceilings, and your patterns.</p>
+              <p>If we both agree you're ready for the 90-day intensive, we continue. If not, I'll tell you directly. No commitment until that moment.</p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            Who is Adrian Reed, and why should I trust him with this work?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Over the past decade, I built and led a company of more than 600 employees, grounded in the belief that a business is only ever as strong as the people within it.</p>
-            <p>I'm a certified Barrett Values Consultant with years of experience interpreting hundreds of Personal Values Assessments. I've worked closely with fewer than 50 individuals in this specific capacity. Not because I couldn't find more, but because most people aren't ready for what this work actually requires.</p>
-            <p>I'm not a therapist, a doctor, or a guru. I'm someone who hit his own ceiling, tore it down, and now guides others through the same door.</p>
-            <p style="font-style:italic; opacity:0.6; margin-top:0.5rem;">No self-help fluff. Just a door.</p>
-            <p><a href="about.html" class="faq-link">Learn more on the About page →</a></p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Who is Adrian Reed, and why should I trust him with this work?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Over the past decade, I built and led a company of more than 600 employees, grounded in the belief that a business is only ever as strong as the people within it.</p>
+              <p>I'm a certified Barrett Values Consultant with years of experience interpreting hundreds of Personal Values Assessments. I've worked closely with fewer than 50 individuals in this specific capacity. Not because I couldn't find more, but because most people aren't ready for what this work actually requires.</p>
+              <p>I'm not a therapist, a doctor, or a guru. I'm someone who hit his own ceiling, tore it down, and now guides others through the same door.</p>
+              <p style="font-style:italic; opacity:0.6; margin-top:0.5rem;">No self-help fluff. Just a door.</p>
+              <p><a href="about.html" class="faq-link">Learn more on the About page →</a></p>
+            </div>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            What happens if I start Threshold and realize it's not for me?
-            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>You have 14 days from your first session to decide.</p>
-            <p>If within the first 14 days you feel the work is not delivering what was promised, email me. You'll receive a full refund of all payments made. No questions asked, no hard feelings, no "you didn't try hard enough" conversation.</p>
-            <p>After 14 days, no refunds are available. By that point, we're either in the work together, or you've already decided this isn't your door.</p>
-            <p>I offer this guarantee for one reason: if you're not certain within two weeks, I don't want your money.</p>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What happens if I start Threshold and realize it's not for me?
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>You have 14 days from your first session to decide.</p>
+              <p>If within the first 14 days you feel the work is not delivering what was promised, email me. You'll receive a full refund of all payments made. No questions asked, no hard feelings, no "you didn't try hard enough" conversation.</p>
+              <p>After 14 days, no refunds are available. By that point, we're either in the work together, or you've already decided this isn't your door.</p>
+              <p>I offer this guarantee for one reason: if you're not certain within two weeks, I don't want your money.</p>
+            </div>
           </div>
         </div>
       </div>
+      <div style="margin-top: 3rem;">
+        <a href="apply.html" class="btn-outline btn-sm">Apply now →</a>
+      </div>
     </div>
-    <div style="margin-top: 3rem;">
-      <a href="apply.html" class="btn-outline btn-sm">Apply now →</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-  <!-- ============ FOOTER ============ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
-    <a href="/" class="footer-brand" aria-label="Threshold | Home">
-      <svg width="140" height="34" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <rect x="4" y="8" width="44" height="5" fill="#fcb141"/>
-        <rect x="22" y="8" width="8" height="52" fill="#fcb141"/>
-        <text x="58" y="42" font-family="Raleway, sans-serif" font-weight="300" font-size="28" letter-spacing="6" fill="#ffffff" text-anchor="start">THRESHOLD</text>
-      </svg>
-    </a>
-    <nav class="footer-nav" aria-label="Footer" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 0.5rem 0;">
-      <a href="/">Home</a>
-      <a href="/apply.html">Apply</a>
-      <a href="/about.html">About</a>
-      <a href="https://themissinglink.one">The Missing Link</a>
-    </nav>
-    <p class="footer-copy" style="text-align: center; width: 100%; font-size: 0.85rem; opacity: 0.6;">
-      &copy; 2026 Threshold. All rights reserved.
-      <br>
-      <span style="font-style: italic;">The diagnostic door: <a href="https://themissinglink.one" style="color: inherit; text-decoration: underline; text-underline-offset: 0.2em;">themissinglink.one</a></span>
-    </p>
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo" aria-label="Threshold home">
+        <svg width="120" height="28" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="8" width="44" height="5" fill="#fcb141" opacity="0.8"/>
+          <rect x="22" y="8" width="8" height="52" fill="#fcb141" opacity="0.8"/>
+          <text x="58" y="42" font-family="Raleway, sans-serif" font-weight="300" font-size="28" letter-spacing="6" fill="rgba(255,255,255,0.5)" text-anchor="start">THRESHOLD</text>
+        </svg>
+      </a>
+      <div class="footer-links">
+        <a href="apply.html" class="footer-link">Apply</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="the-missing-link.html" class="footer-link">The Missing Link</a>
+      </div>
+      <p class="footer-copy">© Threshold. All rights reserved.</p>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -176,7 +176,7 @@ a, button, [role='button'], input, textarea, select {
   background: #fff;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
   .nav-links.open {
@@ -566,11 +566,18 @@ a, button, [role='button'], input, textarea, select {
   flex-shrink: 0;
 }
 @media (max-width: 640px) {
-  .compare-header, .compare-row { grid-template-columns: 1fr; }
+  .compare-header, .compare-row { grid-template-columns: 1fr; gap: var(--space-3); }
   .compare-header .compare-col-not { display: none; }
-  .compare-row .compare-col-not { color: var(--color-text-faint); font-size: var(--text-sm); }
+  .compare-row .compare-col-not {
+    color: var(--color-text-faint);
+    font-size: var(--text-sm);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-divider);
+    margin-bottom: var(--space-2);
+  }
   .compare-row .compare-col-not::before { content: ""; }
   .compare-row .compare-col-is::before { content: "✓"; color: var(--color-accent); }
+  .compare-row { padding: var(--space-5) 0; }
 }
 
 /* --- QUOTE BANNER ---------------------------------- */
@@ -789,7 +796,7 @@ a, button, [role='button'], input, textarea, select {
   max-width: 100%;
   margin-top: var(--space-6);
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .results-grid { grid-template-columns: 1fr; }
 }
 
@@ -1456,20 +1463,26 @@ a, button, [role='button'], input, textarea, select {
   height: min(50vh, 380px);
 }
 @media (max-width: 768px) {
-  .hero-geometry { width: 90vw; height: 90vw; }
-  .quote-geometry { width: 70vw; height: 70vw; }
-  .cta-geometry { width: 70vw; height: 70vw; }
+  .hero-geometry { width: 85vw; height: 85vw; max-width: 420px; max-height: 420px; }
+  .quote-geometry { width: 65vw; height: 65vw; max-width: 320px; max-height: 320px; }
+  .cta-geometry { width: 65vw; height: 65vw; max-width: 320px; max-height: 320px; }
 }
 /* Result card icons — bump up size and use sacred geometry scale */
 .result-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
   margin-bottom: var(--space-5);
+}
+.result-icon svg {
+  width: 48px;
+  height: 48px;
+  display: block;
 }
 
 /* --- FADE-IN --------------------------------------- */
-.fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
-.fade-in.visible { opacity: 1; transform: none; }
+.js-loaded .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
+.js-loaded .fade-in.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .fade-in { opacity: 1; transform: none; transition: none; }
 }

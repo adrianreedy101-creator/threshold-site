@@ -72,6 +72,7 @@
 
 // --- Scroll-driven fade-in
 (function () {
+  document.body.classList.add('js-loaded');
   const els = document.querySelectorAll('.fade-in');
   if (!els.length) return;
   const observer = new IntersectionObserver(
