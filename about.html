@@ -2,19 +2,20 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>About Adrian Reed | Threshold</title>
   <meta name="description" content="I've built the company. I've upgraded myself. I've walked through the confusion alone. Threshold exists because I chose people over performance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="./assets/hero-3.webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="site-nav site-nav--solid" id="siteNav">
-    <a href="/" class="nav-logo" aria-label="Threshold home">
+    <a href="./index.html" class="nav-logo" aria-label="Threshold home">
       <svg width="140" height="34" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="8" width="44" height="5" fill="#fcb141"/>
         <rect x="22" y="8" width="8" height="52" fill="#fcb141"/>
@@ -22,9 +23,9 @@
       </svg>
     </a>
     <div class="nav-links">
-      <a href="apply.html" class="nav-link">Apply</a>
-      <a href="about.html" class="nav-link nav-link--active">About</a>
-      <a href="the-missing-link.html" class="nav-link">The Missing Link</a>
+      <a class='nav-link' href='./apply.html'>Apply</a>
+      <a class='nav-link nav-link--active' href='./about.html'>About</a>
+      <a class='nav-link' href='./the-missing-link.html'>The Missing Link</a>
     </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -32,44 +33,57 @@
   </nav>
 
   <!-- HERO -->
-  <section class="page-hero page-hero--tall">
-    <div class="page-hero-bg" style="background-image: url('./assets/hero-3.png');"></div>
-    <div class="page-hero-overlay"></div>
-    <!-- Sacred geometry -->
-    <div class="sacred-geometry about-hero-geometry" aria-hidden="true">
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="./assets/hero-3.webp" alt="" width="1456" height="816" loading="eager" fetchpriority="high" decoding="async">
+    </div>
+    <div class="hero-overlay"></div>
+    <!-- Sacred geometry: Metatron's Cube -->
+    <div class="sacred-geometry hero-geometry" aria-hidden="true">
       <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="250" cy="250" r="240" stroke="white" stroke-width="0.6" opacity="0.2"/>
-        <circle cx="250" cy="250" r="190" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <circle cx="250" cy="250" r="140" stroke="white" stroke-width="0.5" opacity="0.12"/>
-        <circle cx="250" cy="250" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <circle cx="250" cy="154" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <circle cx="250" cy="346" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <circle cx="333" cy="202" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <circle cx="333" cy="298" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <circle cx="167" cy="202" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <circle cx="167" cy="298" r="48" stroke="white" stroke-width="0.6" opacity="0.18"/>
-        <line x1="250" y1="154" x2="333" y2="202" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <line x1="333" y1="202" x2="333" y2="298" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <line x1="333" y1="298" x2="250" y2="346" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <line x1="250" y1="346" x2="167" y2="298" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <line x1="167" y1="298" x2="167" y2="202" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <line x1="167" y1="202" x2="250" y2="154" stroke="white" stroke-width="0.5" opacity="0.15"/>
-        <line x1="250" y1="154" x2="250" y2="346" stroke="white" stroke-width="0.5" opacity="0.12"/>
-        <line x1="167" y1="202" x2="333" y2="298" stroke="white" stroke-width="0.5" opacity="0.12"/>
-        <line x1="333" y1="202" x2="167" y2="298" stroke="white" stroke-width="0.5" opacity="0.12"/>
-        <polygon points="250,130 370,320 130,320" stroke="white" stroke-width="0.5" fill="none" opacity="0.1"/>
-        <polygon points="250,370 370,180 130,180" stroke="white" stroke-width="0.5" fill="none" opacity="0.1"/>
+        <circle cx="250" cy="250" r="240" stroke="white" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="250" cy="250" r="190" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <circle cx="250" cy="250" r="140" stroke="white" stroke-width="0.5" opacity="0.18"/>
+        <circle cx="250" cy="250" r="90" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="250" cy="250" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="250" cy="154" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="250" cy="346" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="333" cy="202" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="333" cy="298" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="167" cy="202" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="167" cy="298" r="48" stroke="white" stroke-width="0.6" opacity="0.22"/>
+        <circle cx="250" cy="106" r="48" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="250" cy="394" r="48" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="374" cy="178" r="48" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="374" cy="322" r="48" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="126" cy="178" r="48" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <circle cx="126" cy="322" r="48" stroke="white" stroke-width="0.5" opacity="0.15"/>
+        <line x1="250" y1="154" x2="333" y2="202" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="333" y1="202" x2="333" y2="298" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="333" y1="298" x2="250" y2="346" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="250" y1="346" x2="167" y2="298" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="167" y1="298" x2="167" y2="202" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="167" y1="202" x2="250" y2="154" stroke="white" stroke-width="0.5" opacity="0.2"/>
+        <line x1="250" y1="154" x2="250" y2="346" stroke="white" stroke-width="0.5" opacity="0.18"/>
+        <line x1="167" y1="202" x2="333" y2="298" stroke="white" stroke-width="0.5" opacity="0.18"/>
+        <line x1="333" y1="202" x2="167" y2="298" stroke="white" stroke-width="0.5" opacity="0.18"/>
+        <polygon points="250,130 370,320 130,320" stroke="white" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <polygon points="250,370 370,180 130,180" stroke="white" stroke-width="0.5" fill="none" opacity="0.15"/>
+        <line x1="250" y1="60" x2="250" y2="440" stroke="white" stroke-width="0.4" opacity="0.1"/>
+        <line x1="60" y1="250" x2="440" y2="250" stroke="white" stroke-width="0.4" opacity="0.1"/>
+        <polygon points="250,100 380,250 250,400 120,250" stroke="white" stroke-width="0.5" fill="none" opacity="0.12"/>
       </svg>
     </div>
-    <div class="container page-hero-content">
+    <div class="hero-content">
       <p class="hero-eyebrow">Adrian Reed</p>
       <h1>I've built the company.<br>I've upgraded myself.<br>I've walked through<br>the confusion alone.</h1>
       <p class="hero-sub">Threshold exists because I chose people over performance, and had to rebuild everything I thought I knew.</p>
+      <a href="https://themissinglink.one/request" target="_blank" rel="noopener" class="btn-hero btn-sm" style="margin-top:1.5rem;">Request a conversation →</a>
     </div>
   </section>
 
   <!-- THE REAL STORY -->
-  <section class="section-story fade-in">
+  <section class="section-story fade-in section--light">
     <div class="container">
       <div class="story-grid">
         <div class="story-text">
@@ -100,7 +114,7 @@
 
   <!-- THE SOLO CLIMB -->
   <section class="section-solo fade-in" style="position:relative; overflow:hidden;">
-    <div style="position:absolute; inset:0; background-image:url('./assets/hero-4.png'); background-size:cover; background-position:center; opacity:0.12; pointer-events:none; z-index:0;"></div>
+    <div style="position:absolute; inset:0; background-image:url('./assets/hero-4.webp'); background-size:cover; background-position:center; opacity:0.12; pointer-events:none; z-index:0;"></div>
     <div class="container" style="position:relative; z-index:1;">
       <div class="solo-inner">
         <h2 class="story-chapter">The Solo Climb</h2>
@@ -129,7 +143,9 @@
 
   <!-- QUOTE BANNER -->
   <section class="section-quote-banner">
-    <div class="quote-banner-bg" style="background-image: url('./assets/hero-5.png');"></div>
+    <div class="quote-banner-bg">
+      <img src="./assets/about-portrait-quote.webp" alt="Adrian Reed" width="1280" height="548" loading="lazy" decoding="async">
+    </div>
     <div class="quote-banner-overlay"></div>
     <div class="sacred-geometry quote-geometry" aria-hidden="true">
       <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +163,7 @@
     <div class="container quote-content">
       <blockquote>
         "Most people aren't ready. The ones who are stop managing their limits and start removing them."
-        <cite>— Adrian Reed</cite>
+        <cite>Adrian Reed</cite>
       </blockquote>
     </div>
   </section>
@@ -168,7 +184,7 @@
   </section>
 
   <!-- CREDENTIALS -->
-  <section class="section-credentials fade-in">
+  <section class="section-credentials fade-in section--light">
     <div class="container">
       <div class="credentials-grid">
         <div class="credentials-left">
@@ -206,7 +222,7 @@
 
   <!-- CLOSING CTA -->
   <section class="section-cta-banner">
-    <div class="cta-banner-bg" style="background-image: url('./assets/hero-1.png');"></div>
+    <div class="cta-banner-bg" style="background-image: url('./assets/hero-1.webp');"></div>
     <div class="cta-banner-overlay"></div>
     <div class="sacred-geometry cta-geometry" aria-hidden="true">
       <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -225,14 +241,14 @@
     </div>
     <div class="container cta-banner-content">
       <h2>Threshold is not for everyone.<br>It's not supposed to be.</h2>
-      <a href="apply.html" class="btn-hero btn-sm">Apply for Threshold →</a>
+      <a class='btn-hero btn-sm' href='./apply.html'>Apply for Threshold →</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <a href="/" class="footer-logo" aria-label="Threshold home">
+      <a href="./index.html" class="footer-logo" aria-label="Threshold home">
         <svg width="120" height="28" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="44" height="5" fill="#fcb141" opacity="0.8"/>
           <rect x="22" y="8" width="8" height="52" fill="#fcb141" opacity="0.8"/>
@@ -240,9 +256,9 @@
         </svg>
       </a>
       <div class="footer-links">
-        <a href="apply.html" class="footer-link">Apply</a>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="the-missing-link.html" class="footer-link">The Missing Link</a>
+        <a class='footer-link' href='./apply.html'>Apply</a>
+        <a class='footer-link' href='./about.html'>About</a>
+        <a class='footer-link' href='./the-missing-link.html'>The Missing Link</a>
       </div>
       <p class="footer-copy">© Threshold. All rights reserved.</p>
     </div>

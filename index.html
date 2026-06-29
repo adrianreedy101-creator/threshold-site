@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Threshold: 90-day intensive for high-performers</title>
   <meta name="description" content="Threshold is a 90-day intensive for the few who are ready to stop managing their limits and start removing them. 3 slots per quarter. Apply for consideration.">
   <meta property="og:title" content="Threshold: 90-day intensive for high-performers">
@@ -11,13 +11,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="./assets/hero-1.webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="site-nav" id="siteNav">
-    <a href="/" class="nav-logo" aria-label="Threshold home">
+    <a href="./index.html" class="nav-logo" aria-label="Threshold home">
       <svg width="140" height="34" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="8" width="44" height="5" fill="#fcb141"/>
         <rect x="22" y="8" width="8" height="52" fill="#fcb141"/>
@@ -25,9 +26,9 @@
       </svg>
     </a>
     <div class="nav-links">
-      <a href="apply.html" class="nav-link">Apply</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="the-missing-link.html" class="nav-link">The Missing Link</a>
+      <a class='nav-link' href='./apply.html'>Apply</a>
+      <a class='nav-link' href='./about.html'>About</a>
+      <a class='nav-link' href='./the-missing-link.html'>The Missing Link</a>
     </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -36,7 +37,9 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('./assets/hero-1.png');"></div>
+    <div class="hero-bg">
+      <img src="./assets/hero-1.webp" alt="" width="1456" height="816" loading="eager" fetchpriority="high" decoding="async">
+    </div>
     <div class="hero-overlay"></div>
     <!-- Sacred geometry: Metatron's Cube -->
     <div class="sacred-geometry hero-geometry" aria-hidden="true">
@@ -78,7 +81,7 @@
       <p class="hero-eyebrow">90-day intensive</p>
       <h1>You're performing.<br>But something<br>is off.</h1>
       <p class="hero-sub">Threshold is a 90-day intensive for the few who are ready to stop managing their limits and start removing them.</p>
-      <a href="apply.html" class="btn-hero btn-sm">Apply for consideration →</a>
+      <a class='btn-hero btn-sm' href='./apply.html'>Apply for consideration →</a>
       <p class="hero-note" style="margin-top: 1.25rem; font-style: italic; opacity: 0.85; font-size: var(--text-xs);">Another 90 days from now, you'll be in the same room with the same ceiling. Or you won't.</p>
     </div>
   </section>
@@ -101,7 +104,7 @@
   </section>
 
   <!-- WHAT THIS ACTUALLY IS -->
-  <section class="section-what fade-in">
+  <section class="section-what fade-in section--light">
     <div class="container">
       <h2 class="section-display">What Threshold is. What it isn't.</h2>
       <div class="compare-table">
@@ -131,7 +134,9 @@
 
   <!-- QUOTE BANNER -->
   <section class="section-quote-banner">
-    <div class="quote-banner-bg" style="background-image: url('./assets/hero-2.png');"></div>
+    <div class="quote-banner-bg">
+      <img src="./assets/about-portrait-quote.webp" alt="Adrian Reed" width="1280" height="548" loading="lazy" decoding="async">
+    </div>
     <div class="quote-banner-overlay"></div>
     <!-- Sacred geometry: Flower of Life -->
     <div class="sacred-geometry quote-geometry" aria-hidden="true">
@@ -150,13 +155,13 @@
     <div class="container quote-content">
       <blockquote>
         "You don't have a strategy problem. You have a ceiling you've been decorating for years. Let's tear it down."
-        <cite>— Adrian Reed</cite>
+        <cite>Adrian Reed</cite>
       </blockquote>
     </div>
   </section>
 
   <!-- WHO IT'S FOR -->
-  <section class="section-forwhom fade-in">
+  <section class="section-forwhom fade-in section--light">
     <div class="container">
       <h2 class="section-display">Threshold is not for everyone.<br>It's not supposed to be.</h2>
       <div class="forwhom-grid">
@@ -213,7 +218,7 @@
 
   <!-- RESULTS -->
   <section class="section-results fade-in" style="position:relative; overflow:hidden;">
-    <div style="position:absolute; inset:0; background-image:url('./assets/hero-3.png'); background-size:cover; background-position:center; opacity:0.12; pointer-events:none; z-index:0;"></div>
+    <div style="position:absolute; inset:0; background-image:url('./assets/hero-3.webp'); background-size:cover; background-position:center; opacity:0.12; pointer-events:none; z-index:0;"></div>
     <div class="container" style="position:relative; z-index:1;">
       <h2 class="section-display">What changes inside Threshold</h2>
       <p style="text-align: center; font-style: italic; opacity: 0.6; font-size: var(--text-sm); margin-bottom: 3rem; max-width: 800px; margin-inline: auto;">You don't just change what you do. You change how you feel while doing it.</p>
@@ -314,7 +319,7 @@
 
   <!-- CTA BANNER — SLOTS -->
   <section class="section-cta-banner">
-    <div class="cta-banner-bg" style="background-image: url('./assets/hero-5.png');"></div>
+    <div class="cta-banner-bg" style="background-image: url('./assets/hero-5.webp');"></div>
     <div class="cta-banner-overlay"></div>
     <!-- Sacred geometry: Seed of Life + hexagram, right-aligned -->
     <div class="sacred-geometry cta-geometry" aria-hidden="true">
@@ -335,12 +340,12 @@
     <div class="container cta-banner-content">
       <h2>Three people. Ninety days. One door.</h2>
       <p>I work closely with no more than three individuals at a time. This isn't a limitation. It's the only way the work stays real.</p>
-      <a href="apply.html" class="btn-hero btn-sm">Apply for Threshold →</a>
+      <a class='btn-hero btn-sm' href='./apply.html'>Apply for Threshold →</a>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section-faq fade-in">
+  <section class="section-faq fade-in section--light">
     <div class="container">
       <div class="faq-grid">
         <div class="faq-left">
@@ -416,7 +421,7 @@
               <p>I'm a certified Barrett Values Consultant with years of experience interpreting hundreds of Personal Values Assessments. I've worked closely with fewer than 50 individuals in this specific capacity. Not because I couldn't find more, but because most people aren't ready for what this work actually requires.</p>
               <p>I'm not a therapist, a doctor, or a guru. I'm someone who hit his own ceiling, tore it down, and now guides others through the same door.</p>
               <p style="font-style:italic; opacity:0.6; margin-top:0.5rem;">No self-help fluff. Just a door.</p>
-              <p><a href="about.html" class="faq-link">Learn more on the About page →</a></p>
+              <p><a class='faq-link' href='./about.html'>Learn more on the About page →</a></p>
             </div>
           </div>
           <div class="faq-item">
@@ -434,7 +439,7 @@
         </div>
       </div>
       <div style="margin-top: 3rem;">
-        <a href="apply.html" class="btn-outline btn-sm">Apply now →</a>
+        <a class='btn-outline btn-sm' href='./apply.html'>Apply now →</a>
       </div>
     </div>
   </section>
@@ -442,7 +447,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <a href="/" class="footer-logo" aria-label="Threshold home">
+      <a href="./index.html" class="footer-logo" aria-label="Threshold home">
         <svg width="120" height="28" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="44" height="5" fill="#fcb141" opacity="0.8"/>
           <rect x="22" y="8" width="8" height="52" fill="#fcb141" opacity="0.8"/>
@@ -450,9 +455,9 @@
         </svg>
       </a>
       <div class="footer-links">
-        <a href="apply.html" class="footer-link">Apply</a>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="the-missing-link.html" class="footer-link">The Missing Link</a>
+        <a class='footer-link' href='./apply.html'>Apply</a>
+        <a class='footer-link' href='./about.html'>About</a>
+        <a class='footer-link' href='./the-missing-link.html'>The Missing Link</a>
       </div>
       <p class="footer-copy">© Threshold. All rights reserved.</p>
 
