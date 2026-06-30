@@ -45,6 +45,8 @@
   btn.addEventListener('click', () => {
     const isOpen = links.classList.toggle('open');
     btn.setAttribute('aria-expanded', String(isOpen));
+    // Mirror state on <body> so CSS without :has() support can still react.
+    document.body.classList.toggle('nav-open', isOpen);
   });
 })();
 
