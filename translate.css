@@ -1,0 +1,235 @@
+/* ============================================================
+   LANGUAGE SWITCHER — "TRANSLATE" tab + soft dropdown
+   Designed to match the site's aesthetic: minimal, no globes,
+   no rainbow flags. Cream dropdown with native-script labels.
+   ============================================================ */
+
+.lang-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* The button itself — matches nav link typography */
+.lang-switch-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1;
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+.lang-switch-btn:hover,
+.lang-switch-btn:focus-visible {
+  border-color: #fcb141;
+  color: #fcb141;
+  outline: none;
+}
+
+.lang-switch-btn .lang-code {
+  font-weight: 600;
+  color: #fcb141;
+  letter-spacing: 0.08em;
+}
+
+.lang-switch-btn .lang-caret {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 1.4px solid currentColor;
+  border-bottom: 1.4px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 180ms ease;
+  margin-left: 0.15rem;
+}
+
+.lang-switch[aria-expanded="true"] .lang-switch-btn .lang-caret {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+/* Dropdown panel */
+.lang-switch-menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  min-width: 240px;
+  background: #faf8f3;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.35),
+              0 6px 16px -4px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 300;
+  list-style: none;
+  margin: 0;
+}
+
+.lang-switch[aria-expanded="true"] .lang-switch-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.lang-switch-menu li {
+  margin: 0;
+}
+
+.lang-switch-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.2;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.lang-switch-menu a:hover,
+.lang-switch-menu a:focus-visible {
+  background: rgba(252, 177, 65, 0.12);
+  color: #1a1a1a;
+  outline: none;
+}
+
+.lang-switch-menu .lang-native {
+  font-weight: 500;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.lang-switch-menu .lang-english {
+  font-size: 0.78rem;
+  color: #7a7770;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* Selected language marker: orange dot */
+.lang-switch-menu a[aria-current="true"] .lang-native::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #fcb141;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+  vertical-align: 2px;
+}
+
+.lang-switch-menu a[aria-current="true"] {
+  background: rgba(252, 177, 65, 0.08);
+}
+
+/* Right-align Arabic option text */
+.lang-switch-menu a[hreflang="ar"] .lang-native {
+  font-family: "Amiri", "Noto Naskh Arabic", "Segoe UI", serif;
+  direction: rtl;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------
+   RTL fixes for Arabic — keeps brand marks and logos rendering
+   left-to-right even inside a right-to-left page.
+   -------------------------------------------------------------- */
+
+/* Logos: SVG text and image logos stay LTR so the wordmark reads
+   correctly. The nav bar still visually mirrors (logo on the right,
+   links on the left) via the parent flex container. */
+[dir="rtl"] .nav-logo,
+[dir="rtl"] .footer-logo {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* SVG-based logos: reset any inherited RTL and give them room so
+   they never clip the top-right corner of the nav in RTL mode. */
+[dir="rtl"] .nav-logo svg {
+  direction: ltr;
+  unicode-bidi: isolate;
+  transform: none;
+  overflow: visible;
+}
+
+/* Brand marks ("The Missing Link", "Threshold") inside Arabic body
+   copy stay LTR so the Latin wordmark reads correctly. */
+[dir="rtl"] em.tml,
+[dir="rtl"] em {
+  unicode-bidi: isolate;
+}
+
+/* Give the Threshold SVG breathing room from the edge in RTL so it
+   isn't clipped when the nav bar mirrors. */
+[dir="rtl"] .site-nav {
+  padding-left: clamp(1rem, 5vw, 2rem);
+  padding-right: clamp(1rem, 5vw, 2rem);
+}
+
+/* Mobile placement — sits inside the hamburger menu.
+   On narrow viewports the dropdown becomes a full-width inline panel
+   so it never overflows the drawer edges. */
+@media (max-width: 900px) {
+  /* Hide the desktop-position switcher; the one inside .nav-links / .mobile-menu wins */
+  .nav-links .lang-switch,
+  .mobile-menu .lang-switch {
+    display: block;
+    width: 100%;
+    margin: 1.25rem 0 0 0;
+    position: relative;
+  }
+  .nav-links .lang-switch-btn,
+  .mobile-menu .lang-switch-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+  }
+  .nav-links .lang-switch-menu,
+  .mobile-menu .lang-switch-menu {
+    position: static;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    margin: 0.5rem 0 0 0;
+    width: 100%;
+    left: auto;
+    right: auto;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    display: none;
+  }
+  .nav-links .lang-switch[aria-expanded="true"] .lang-switch-menu,
+  .mobile-menu .lang-switch[aria-expanded="true"] .lang-switch-menu {
+    display: block;
+  }
+}
+
+/* ==== RTL support (Arabic) — flip the whole page ==== */
+html[dir="rtl"] .lang-switch-menu {
+  right: auto;
+  left: 0;
+}

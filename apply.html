@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./translate.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="site-nav site-nav--solid" id="siteNav">
-    <a href="./index.html" class="nav-logo" aria-label="Threshold home">
+    <a aria-label='Threshold home' class='nav-logo' href='/'>
       <svg width="140" height="34" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="8" width="44" height="5" fill="#fcb141"/>
         <rect x="22" y="8" width="8" height="52" fill="#fcb141"/>
@@ -22,9 +23,9 @@
       </svg>
     </a>
     <div class="nav-links">
-      <a class='nav-link nav-link--active' href='./apply.html'>Apply</a>
-      <a class='nav-link' href='./about.html'>About</a>
-      <a class='nav-link' href='./the-missing-link.html'>The Missing Link</a>
+      <a class='nav-link nav-link--active' href='/apply'>Apply</a>
+      <a class='nav-link' href='/about'>About</a>
+      <a class='nav-link' href='/the-missing-link'>The Missing Link</a>
     </div>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -47,7 +48,7 @@
         <p>Thank you. I'll read your answers personally.</p>
         <p>If I see a potential fit for Threshold, you'll receive an email from me within 72 hours to schedule a short (10-minute) call. That call is simply us talking, no pressure, no slides, no close.</p>
         <p>If you don't hear back, it means this isn't the right door for you right now. No hard feelings, and no spam. Ever.</p>
-        <a href="./index.html" class="btn-outline" style="margin-top: 2rem;">Return home →</a>
+        <a class='btn-outline' href='/' style='margin-top: 2rem;'>Return home →</a>
       </div>
 
       <!-- The form -->
@@ -127,7 +128,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <a href="./index.html" class="footer-logo" aria-label="Threshold home">
+      <a aria-label='Threshold home' class='footer-logo' href='/'>
         <svg width="120" height="28" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="44" height="5" fill="#fcb141" opacity="0.8"/>
           <rect x="22" y="8" width="8" height="52" fill="#fcb141" opacity="0.8"/>
@@ -135,14 +136,15 @@
         </svg>
       </a>
       <div class="footer-links">
-        <a class='footer-link' href='./apply.html'>Apply</a>
-        <a class='footer-link' href='./about.html'>About</a>
-        <a class='footer-link' href='./the-missing-link.html'>The Missing Link</a>
+        <a class='footer-link' href='/apply'>Apply</a>
+        <a class='footer-link' href='/about'>About</a>
+        <a class='footer-link' href='/the-missing-link'>The Missing Link</a>
       </div>
       <p class="footer-copy">© Threshold. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script src="./translate.js" defer></script>
 </body>
 </html>
