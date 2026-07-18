@@ -233,3 +233,53 @@ html[dir="rtl"] .lang-switch-menu {
   right: auto;
   left: 0;
 }
+
+/* ==== Consultation-language note ====
+   A small, refined pill-style notice used near CTAs / forms to inform
+   non-English visitors that the actual conversation is held in English.
+   Understated, invitational, not shouty. */
+.consult-lang-note {
+  display: block;
+  max-width: 32em;
+  margin: 1.5rem auto 1.75rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(252, 177, 65, 0.28);
+  border-radius: 999px;
+  background: rgba(252, 177, 65, 0.06);
+  color: rgba(240, 240, 240, 0.82);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* Light-background variant (used on the thank-you page + light contexts) */
+.theme-light .consult-lang-note,
+.consult-lang-note--light {
+  border-color: rgba(13, 13, 13, 0.14);
+  background: rgba(13, 13, 13, 0.03);
+  color: rgba(13, 13, 13, 0.62);
+}
+
+/* Small tweak for RTL: same visual, native reading direction handled by parent */
+html[dir="rtl"] .consult-lang-note {
+  letter-spacing: 0;
+}
+
+/* When the note sits inside a left-aligned hero, don't auto-center it.
+   Align it to the start (same edge as the CTA button). */
+.hero-content .consult-lang-note,
+.ab-hero-content .consult-lang-note {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: start;
+  max-width: 32em;
+}
+html[dir="rtl"] .hero-content .consult-lang-note,
+html[dir="rtl"] .ab-hero-content .consult-lang-note {
+  margin-right: 0;
+  margin-left: 0;
+}
