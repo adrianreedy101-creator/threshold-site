@@ -1,5 +1,5 @@
 /* ============================================================
-   LANGUAGE SWITCHER — "TRANSLATE" tab + soft dropdown
+   LANGUAGE SWITCHER - "TRANSLATE" tab + soft dropdown
    Designed to match the site's aesthetic: minimal, no globes,
    no rainbow flags. Cream dropdown with native-script labels.
    ============================================================ */
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-/* The button itself — matches nav link typography */
+/* The button itself - matches nav link typography */
 .lang-switch-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -150,7 +150,7 @@
 }
 
 /* --------------------------------------------------------------
-   RTL fixes for Arabic — keeps brand marks and logos rendering
+   RTL fixes for Arabic - keeps brand marks and logos rendering
    left-to-right even inside a right-to-left page.
    -------------------------------------------------------------- */
 
@@ -186,7 +186,7 @@
   padding-right: clamp(1rem, 5vw, 2rem);
 }
 
-/* Mobile placement — sits inside the hamburger menu.
+/* Mobile placement - sits inside the hamburger menu.
    On narrow viewports the dropdown becomes a full-width inline panel
    so it never overflows the drawer edges. */
 @media (max-width: 900px) {
@@ -228,7 +228,7 @@
   }
 }
 
-/* ==== RTL support (Arabic) — flip the whole page ==== */
+/* ==== RTL support (Arabic) - flip the whole page ==== */
 html[dir="rtl"] .lang-switch-menu {
   right: auto;
   left: 0;

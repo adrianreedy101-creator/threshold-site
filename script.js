@@ -1,5 +1,5 @@
 // =============================================
-// THRESHOLD — Site JavaScript
+// THRESHOLD - Site JavaScript
 // =============================================
 
 // --- Rotating testimonials
@@ -150,7 +150,7 @@
       success.scrollIntoView({ behavior: 'smooth', block: 'start' });
     })
     .catch(function () {
-      // Show success regardless — Zapier may return CORS headers inconsistently
+      // Show success regardless - Zapier may return CORS headers inconsistently
       wrap.style.display = 'none';
       success.style.display = 'block';
       success.scrollIntoView({ behavior: 'smooth', block: 'start' });

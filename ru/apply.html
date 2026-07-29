@@ -15,7 +15,7 @@
 
   <!-- NAV -->
   <nav class="site-nav site-nav--solid" id="siteNav">
-    <a aria-label='Threshold home' class='nav-logo' href='../'>
+    <a aria-label='Threshold | Главная' class='nav-logo' href='../'>
       <svg width="140" height="34" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="8" width="44" height="5" fill="#fcb141"/>
         <rect x="22" y="8" width="8" height="52" fill="#fcb141"/>
@@ -33,8 +33,13 @@
   </nav>
 
   <!-- FORM SECTION -->
-  <section class="section-form" id="applyForm" style="position:relative; overflow:hidden; padding-top:clamp(6rem,12vw,10rem);">
-    <div style="position:absolute; inset:0; background-image:url('../assets/hero-1.webp'); background-size:cover; background-position:center; opacity:0.12; pointer-events:none; z-index:0;"></div>
+  <section class="section-form" id="applyForm" style="position:relative; overflow:hidden; padding-top:clamp(6rem,12vw,10rem); background:#0D0D0D;">
+    <!-- Warm mountain image matched to the homepage hero (0.72 opacity, center 35% crop) -->
+    <div style="position:absolute; inset:0; z-index:0; pointer-events:none;">
+      <img src="../assets/hero-1.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 35%; opacity:0.72;">
+      <!-- Subtle gradient so the form fields stay legible over the image -->
+      <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.7) 60%, rgba(13,13,13,0.85) 100%);"></div>
+    </div>
     <div class="container container--narrow" style="position:relative; z-index:1;">
       <!-- Success state (hidden by default) -->
       <div class="form-success" id="formSuccess" style="display:none;">
@@ -46,8 +51,8 @@
         </div>
         <h2>Заявка получена.</h2>
         <p>Спасибо. Я лично прочитаю твои ответы.</p>
-        <p>Если я увижу потенциальное соответствие для <em>Threshold</em>, ты получишь письмо от меня в течение 72 часов с приглашением на короткий (10-минутный) звонок. Этот звонок это просто разговор, без давления, без презентаций, без продаж.</p>
-        <p>Если ответа не будет, это значит, что сейчас это не твоя дверь. Без обид и без спама. Никогда.</p>
+        <p>Если я увижу потенциальное соответствие для <em>Threshold</em>, ты получишь письмо от меня в течение 72 часов с приглашением на короткий (10-минутный) звонок: просто разговор, без давления, без презентаций, без продаж.</p>
+        <p>Если ответа не будет, значит, сейчас это не твоя дверь. Без обид и без спама. Никогда.</p>
         <a class='btn-outline' href='../' style='margin-top: 2rem;'>Вернуться на главную →</a>
       </div>
 
@@ -56,7 +61,7 @@
         <div style="text-align:center; margin-bottom:clamp(2rem,4vw,3rem);">
           <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#fcb141; margin-bottom:1rem;">Врата</p>
           <h1 style="font-family:'Raleway',sans-serif; font-size:clamp(1.875rem,1rem + 2.2vw,3.125rem); font-weight:200; text-transform:uppercase; color:#fff; letter-spacing:0.015em; line-height:1.1; margin-bottom:1.5rem;">Подать заявку на <em>Threshold</em></h1>
-          <p style="font-size:var(--text-base); color:rgba(240,240,240,0.85); line-height:1.65; max-width:600px; margin:0 auto;">Ты не "покупаешь коучинг". Ты запрашиваешь вход в небольшую сфокусированную группу людей, которые больше не хотят управлять своими пределами.</p>
+          <p style="font-size:var(--text-base); color:rgba(240,240,240,0.85); line-height:1.65; max-width:600px; margin:0 auto;">Ты не "покупаешь коучинг". Ты запрашиваешь вход в закрытое пространство, где одновременно работаю не больше чем с двумя людьми, для тех, кто больше не хочет управлять своими пределами.</p>
           <p style="font-size:var(--text-base); color:rgba(240,240,240,0.85); line-height:1.65; max-width:600px; margin:1rem auto 0;">Форма ниже занимает 3 минуты. Я лично читаю каждую заявку. Если есть соответствие, ты услышишь от меня в течение 72 часов о короткой встрече по телефону.</p>
           <p style="font-size:var(--text-sm); color:rgba(240,240,240,0.45); margin-top:0.75rem;">Без звонка с продажей. Без обязательств. Просто разговор.</p>
         </div>
@@ -131,7 +136,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <a aria-label='Threshold home' class='footer-logo' href='../'>
+      <a aria-label='Threshold | Главная' class='footer-logo' href='../'>
         <svg width="120" height="28" viewBox="0 0 280 68" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
           <rect x="4" y="8" width="44" height="5" fill="#fcb141" opacity="0.8"/>
           <rect x="22" y="8" width="8" height="52" fill="#fcb141" opacity="0.8"/>
@@ -149,5 +154,6 @@
 
   <script src="../script.js"></script>
   <script src="../translate.js" defer></script>
+  <script src="../page-transitions.js" defer></script>
 </body>
 </html>

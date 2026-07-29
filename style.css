@@ -1,5 +1,5 @@
 /* ===================================================
-   THRESHOLD — Design System
+   THRESHOLD - Design System
    Same DNA as The Missing Link. Different identity.
    Raleway · Charcoal/Black · Amber #fcb141
    =================================================== */
@@ -34,7 +34,7 @@
   --space-24: 6rem;
   --space-32: 8rem;
 
-  /* Colors — Threshold palette */
+  /* Colors - Threshold palette */
   --color-bg:           #0d0d0d;
   --color-surface:      #141414;
   --color-surface-2:    #1a1a1a;
@@ -476,7 +476,7 @@ a, button, [role='button'], input, textarea, select {
 .section--light .investment-divider {
   border-color: rgba(0,0,0,0.1);
 }
-/* Dark cards inside light sections — keep them light to match */
+/* Dark cards inside light sections - keep them light to match */
 .section--light .tml-item {
   background: #fff;
   border-color: rgba(0,0,0,0.08);
@@ -1215,7 +1215,7 @@ a, button, [role='button'], input, textarea, select {
   color: var(--color-text);
   font-weight: 500;
 }
-/* About page hero geometry — centred behind text */
+/* About page hero geometry - centred behind text */
 .about-hero-geometry {
   top: 50%;
   left: 50%;
@@ -1610,7 +1610,7 @@ a, button, [role='button'], input, textarea, select {
   width: 100%;
   height: 100%;
 }
-/* Hero — centred behind the text, same as mobile */
+/* Hero - centred behind the text, same as mobile */
 .hero-geometry {
   top: 50%;
   left: 50%;
@@ -1618,7 +1618,7 @@ a, button, [role='button'], input, textarea, select {
   width: min(80vh, 700px);
   height: min(80vh, 700px);
 }
-/* Quote banner — centred */
+/* Quote banner - centred */
 .quote-geometry {
   top: 50%;
   left: 50%;
@@ -1626,7 +1626,7 @@ a, button, [role='button'], input, textarea, select {
   width: min(55vh, 420px);
   height: min(55vh, 420px);
 }
-/* CTA / slots banner — centred */
+/* CTA / slots banner - centred */
 .cta-geometry {
   top: 50%;
   left: 50%;
@@ -1639,7 +1639,7 @@ a, button, [role='button'], input, textarea, select {
   .quote-geometry { width: 65vw; height: 65vw; max-width: 320px; max-height: 320px; }
   .cta-geometry { width: 65vw; height: 65vw; max-width: 320px; max-height: 320px; }
 }
-/* Result card icons — bump up size and use sacred geometry scale */
+/* Result card icons - bump up size and use sacred geometry scale */
 .result-icon {
   width: 48px;
   height: 48px;
@@ -1654,7 +1654,7 @@ a, button, [role='button'], input, textarea, select {
 
 /* --- FADE-IN ---------------------------------------
    Desktop: subtle scroll-driven fade for polish.
-   Mobile: disabled — users scroll fast and IntersectionObserver lag created
+   Mobile: disabled - users scroll fast and IntersectionObserver lag created
    a janky "broken" feel where sections appeared blank as they scrolled in.
 */
 .js-loaded .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
@@ -1671,7 +1671,7 @@ a, button, [role='button'], input, textarea, select {
    ===================================================== */
 @media (max-width: 640px) {
 
-  /* Hero h1 — prevent long uppercase lines from overflowing viewport */
+  /* Hero h1 - prevent long uppercase lines from overflowing viewport */
   .hero h1 {
     overflow-wrap: break-word;
     word-break: break-word;
@@ -1679,13 +1679,13 @@ a, button, [role='button'], input, textarea, select {
     font-size: clamp(1.55rem, 4.5vw + 0.4rem, 2rem);
   }
 
-  /* Large-title hero — Investment page (keep dramatic but manageable) */
+  /* Large-title hero - Investment page (keep dramatic but manageable) */
   .hero--large-title h1 {
     font-size: clamp(2rem, 8vw + 0.5rem, 3.5rem);
     line-height: 1.05;
   }
 
-  /* Investment price — keep $10,000 and "per month" on one line */
+  /* Investment price - keep $10,000 and "per month" on one line */
   .investment-price {
     align-items: baseline;
     flex-wrap: nowrap;
@@ -1700,33 +1700,33 @@ a, button, [role='button'], input, textarea, select {
     white-space: nowrap;
   }
 
-  /* Hero content — tighten side padding on very small screens */
+  /* Hero content - tighten side padding on very small screens */
   .hero-content {
     padding-left: var(--space-4);
     padding-right: var(--space-4);
   }
 
-  /* Buttons — make sure they don't overflow */
+  /* Buttons - make sure they don't overflow */
   .btn-hero, .btn-outline {
     max-width: 100%;
     white-space: normal;
     text-align: center;
   }
 
-  /* Legacy CTA buttons on TML page — stack vertically on mobile, centred */
+  /* Legacy CTA buttons on TML page - stack vertically on mobile, centred */
   .legacy-cta {
     flex-direction: column;
     align-items: center;
   }
 
-  /* Apply form — full width inputs */
+  /* Apply form - full width inputs */
   .form-field input,
   .form-field textarea,
   .form-field select {
     font-size: 16px; /* prevents iOS zoom on focus */
   }
 
-  /* Container — tighter padding */
+  /* Container - tighter padding */
   .container {
     padding-inline: var(--space-4);
   }
@@ -1734,7 +1734,7 @@ a, button, [role='button'], input, textarea, select {
     padding-inline: var(--space-4);
   }
 
-  /* Section padding — slightly tighter on mobile */
+  /* Section padding - slightly tighter on mobile */
   .section-what,
   .section-forwhom,
   .section-faq,
@@ -1746,17 +1746,17 @@ a, button, [role='button'], input, textarea, select {
     padding-block: clamp(var(--space-10), 8vw, var(--space-16));
   }
 
-  /* Stat blocks — already stacking, just tighten */
+  /* Stat blocks - already stacking, just tighten */
   .stat-block {
     padding: var(--space-4);
   }
 
-  /* FAQ — ensure chevrons don't get clipped */
+  /* FAQ - ensure chevrons don't get clipped */
   .faq-question {
     gap: var(--space-3);
   }
 
-  /* Footer nav — wrap if needed */
+  /* Footer nav - wrap if needed */
   .footer-nav {
     flex-wrap: wrap;
     gap: var(--space-3);
@@ -2182,7 +2182,7 @@ a, button, [role='button'], input, textarea, select {
 @media (max-width: 767px) {
   .nav-links { display: none; }
   /* Mobile menu drops down BELOW the nav bar (TML pattern) so the THRESHOLD
-     logo + hamburger always stay visible at the top — no z-index fighting. */
+     logo + hamburger always stay visible at the top - no z-index fighting. */
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -2256,7 +2256,7 @@ section h2,
 }
 
 /* ============================================================
-   "THE REAL STORY" SECTION (about page) — center to match the
+   "THE REAL STORY" SECTION (about page) - center to match the
    rest of the about page. The aside column with stats was
    removed, so collapse the 2fr/1fr grid into a single centered
    column.
@@ -2283,4 +2283,224 @@ section h2,
   max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* ============================================================
+   Brand mark: <em class="tml">The Missing Link</em>
+   Renders in orange (#fcb141). Italic in body copy,
+   plain (non-italic) in headings. Matches the treatment on
+   themissinglink.one for cross-site brand consistency.
+   ============================================================ */
+em.tml {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-style: italic;
+}
+h1 em.tml,
+h2 em.tml,
+h3 em.tml,
+h4 em.tml,
+h5 em.tml,
+.ab-h2 em.tml,
+.ab-hero h1 em.tml,
+.hero-heading em.tml,
+.compare-title em.tml,
+.faq-question em.tml {
+  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Reset inherited letter-spacing so brand mark never picks up
+   nav/button spacing when it appears inside those contexts. */
+em.tml {
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+.faq-question em.tml,
+.faq-question-text em.tml,
+button em.tml {
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  white-space: normal;
+}
+
+/* ============================================================
+   Brand mark: <em class="th">Threshold</em>
+   Same treatment as .tml but for the Threshold word itself.
+   Skips the logo (which has its own component styling).
+   ============================================================ */
+em.th {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+h1 em.th,
+h2 em.th,
+h3 em.th,
+h4 em.th,
+h5 em.th,
+.ab-h2 em.th,
+.ab-hero h1 em.th,
+.hero-heading em.th,
+.compare-title em.th,
+.faq-question em.th {
+  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 600;
+}
+.faq-question em.th,
+.faq-question-text em.th,
+button em.th {
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  white-space: normal;
+}
+
+/* ============================================================
+   Nav brand-mark: inherit nav-link sizing so The Missing Link
+   tab matches APPLY / ABOUT visually. Keep the orange colour
+   but match font-size, letter-spacing, and uppercase treatment.
+   ============================================================ */
+.nav-link em.tml {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  color: var(--color-accent);
+}
+
+/* Footer brand marks: same treatment */
+.site-footer em.tml,
+footer em.tml {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   Soft page transitions (Apple-style fade-in on load, fade-out
+   on navigate). Uses body class to trigger the fade animation.
+   ============================================================ */
+body {
+  animation: page-fade-in 500ms ease-out;
+}
+body.page-leaving {
+  opacity: 0;
+  transition: opacity 320ms ease-in;
+}
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body { animation: none; }
+  body.page-leaving { transition: none; opacity: 1; }
+}
+
+/* Eyebrow brand-mark: inherit uppercase and letter-spacing so the
+   brand mark visually matches the surrounding eyebrow text. */
+.ab-eyebrow em.tml,
+.ab-eyebrow em.th,
+.section-eyebrow em.tml,
+.section-eyebrow em.th,
+p.eyebrow em.tml,
+p.eyebrow em.th {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: normal;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  color: var(--color-accent);
+}
+
+/* Nav-link never wraps */
+.nav-link {
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Positioning band: signature "not on social media" moment.
+   ============================================================ */
+.positioning-band {
+  background: #0D0D0D;
+  color: #faf8f3;
+  padding: clamp(4.5rem, 10vw, 8rem) 1.5rem;
+  border-top: 1px solid rgba(252, 177, 65, 0.15);
+  border-bottom: 1px solid rgba(252, 177, 65, 0.15);
+}
+.positioning-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.positioning-lead {
+  font-family: var(--font-display, 'Raleway', sans-serif);
+  font-size: clamp(1.35rem, 0.9rem + 1.4vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+  color: #fcb141;
+  margin: 0 0 1.5rem;
+}
+.positioning-body {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: clamp(1rem, 0.9rem + 0.35vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(250, 248, 243, 0.75);
+  margin: 0;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 640px) {
+  .positioning-band {
+    padding: 3.5rem 1.25rem;
+  }
+}
+
+/* ============================================================
+   Atmospheric background layer for dark sections that would
+   otherwise feel too heavy. Sits behind content, dimmed to 12-18%
+   so text always reads with full contrast.
+   ============================================================ */
+.section-bg-atmosphere {
+  position: relative;
+  overflow: hidden;
+}
+.section-bg-atmosphere > .section-bg-img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.section-bg-atmosphere > .section-bg-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.28;
+}
+.section-bg-atmosphere > .section-bg-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,13,13,0.6) 0%,
+    rgba(13,13,13,0.52) 50%,
+    rgba(13,13,13,0.72) 100%
+  );
+}
+.section-bg-atmosphere > .container,
+.section-bg-atmosphere > .section-inner {
+  position: relative;
+  z-index: 1;
 }

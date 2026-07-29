@@ -1,5 +1,5 @@
 /* ========================================================
-   ABOUT PAGE — alternating dark and light editorial story
+   ABOUT PAGE - alternating dark and light editorial story
    Matches TML About page visual system.
    ======================================================== */
 
@@ -49,7 +49,7 @@
   border-color: rgba(13, 13, 13, 0.12) !important;
 }
 
-/* Skip link — visually hidden until keyboard-focused.
+/* Skip link - visually hidden until keyboard-focused.
    Uses `clip` + width:1px so it does NOT create horizontal overflow in RTL. */
 .skip-link {
   position: absolute;
@@ -147,7 +147,7 @@ html[dir="rtl"] body {
   padding: var(--space-24) 0;
 }
 
-/* Constrained-column variant — text is left-aligned within a centered column */
+/* Constrained-column variant - text is left-aligned within a centered column */
 .ab-section-centered .ab-inner {
   max-width: 760px;
   text-align: left;
@@ -366,7 +366,7 @@ html[dir="rtl"] body {
   padding-right: var(--space-6);
   position: relative;
 }
-/* Decorative orange bars removed by request — keep quote clean */
+/* Decorative orange bars removed by request - keep quote clean */
 .ab-pullquote .ab-inner::before,
 .ab-pullquote .ab-inner::after {
   content: none;
@@ -540,7 +540,7 @@ html[dir="rtl"] body {
 }
 
 /* ===== CLOSING CTA BANNER =====
-   Full-screen finale on desktop — the closing moment of the page deserves
+   Full-screen finale on desktop - the closing moment of the page deserves
    the whole viewport, mirroring the hero treatment.
    Asymmetric padding pushes the content block down ~30% so it sits closer to
    the optical centre of the section, not against the top of the photo. */
@@ -948,7 +948,7 @@ html[dir="rtl"] body {
 }
 
 /* ============================================================
-   About footer — ensure logo and meta are centered on all sizes
+   About footer - ensure logo and meta are centered on all sizes
    ============================================================ */
 .ab-footer .footer-brand {
   display: inline-flex;
@@ -967,7 +967,7 @@ html[dir="rtl"] body {
 }
 
 /* ============================================================
-   "THE REAL STORY" SECTION — now centered to match the rest
+   "THE REAL STORY" SECTION - now centered to match the rest
    of the About page. The right-side stats column was removed,
    so the orphaned left column should collapse to a single
    centered column matching the other ab-section-centered blocks.
@@ -994,4 +994,16 @@ html[dir="rtl"] body {
 }
 .ab-section-twocol .ab-eyebrow {
   text-align: center;
+}
+
+/* Ensure the final dark CTA fills at least the viewport when scrolled to
+   the bottom, so no thin sliver of the previous light section peeks out. */
+.ab-closing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ab-closing .ab-inner {
+  width: 100%;
 }

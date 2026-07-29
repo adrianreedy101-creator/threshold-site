@@ -1,12 +1,12 @@
 /* ==========================================================================
-   TRANSLATE — language switcher for The Missing Link / Threshold
+   TRANSLATE - language switcher for The Missing Link / Threshold
    No dependencies. Detects current language from the URL, remembers
    user choice, offers browser-language on first visit.
    ========================================================================== */
 (function () {
   'use strict';
 
-  // Language catalog — code, native label, English label, RTL flag
+  // Language catalog - code, native label, English label, RTL flag
   const LANGS = [
     { code: 'en', native: 'English',    english: 'English',    rtl: false },
     { code: 'es', native: 'Español',    english: 'Spanish',    rtl: false },
@@ -21,7 +21,7 @@
   // like themissinglink.one/es/index.html.
   function detectCurrentLang() {
     const parts = location.pathname.split('/').filter(Boolean);
-    // Iterate from the last segment backward — the language code always
+    // Iterate from the last segment backward - the language code always
     // sits immediately before the filename.
     for (let i = parts.length - 1; i >= 0; i--) {
       const seg = parts[i].toLowerCase();
@@ -57,7 +57,7 @@
     // Build the relative URL
     let relPath;
     if (langIndex >= 0) {
-      // We're inside a language folder — go up one level, then into target
+      // We're inside a language folder - go up one level, then into target
       if (targetLang === 'en') {
         relPath = '../' + filename;
       } else {
@@ -211,7 +211,7 @@
 
     const links = document.querySelectorAll('a[href]');
     links.forEach(function (a) {
-      // Skip the language switcher — it manages its own hrefs.
+      // Skip the language switcher - it manages its own hrefs.
       if (a.closest('.lang-switch')) return;
 
       const raw = a.getAttribute('href');
@@ -263,13 +263,13 @@
     // inside the current language. Runs BEFORE we inject the switcher.
     rewriteInternalLinks(currentLang);
 
-    // Desktop nav — append switcher after the last nav-link
+    // Desktop nav - append switcher after the last nav-link
     document.querySelectorAll('.site-nav .nav-links').forEach(function (navLinks) {
       if (navLinks.querySelector('.lang-switch')) return;
       navLinks.appendChild(buildSwitcher(currentLang));
     });
 
-    // Mobile drawer — some layouts use .mobile-menu, others reuse .nav-links
+    // Mobile drawer - some layouts use .mobile-menu, others reuse .nav-links
     document.querySelectorAll('.mobile-menu').forEach(function (menu) {
       if (menu.querySelector('.lang-switch')) return;
       menu.appendChild(buildSwitcher(currentLang));
