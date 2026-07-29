@@ -1007,3 +1007,74 @@ html[dir="rtl"] body {
 .ab-closing .ab-inner {
   width: 100%;
 }
+
+/* Closing CTA stays centered — matching the composition that already
+   feels balanced on the mountain imagery. */
+
+/* True vertical centering — equal padding top and bottom. */
+.ab-closing {
+  padding-top: clamp(4rem, 12vh, 10rem) !important;
+  padding-bottom: clamp(4rem, 12vh, 10rem) !important;
+  align-items: center !important;
+}
+
+/* Constrain closing to exactly one viewport, cropping any overflow. */
+.ab-closing {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  align-items: center !important;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+.ab-closing .ab-inner {
+  transform: translateY(6vh);
+}
+
+/* Closing subtitle - quiet line beneath the closing H2 */
+.ab-closing-sub {
+  max-width: 640px;
+  margin: clamp(1.5rem, 3vw, 2rem) auto 0;
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: clamp(1rem, 0.85rem + 0.35vw, 1.15rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+/* FINAL closing section — viewport-minus-footer height, perfect centering.
+   Placed at the END of about.css so it wins the cascade over earlier rules. */
+:root {
+  --footer-h: 152px;
+}
+.ab-closing {
+  min-height: calc(100vh - var(--footer-h)) !important;
+  height: calc(100vh - var(--footer-h)) !important;
+  max-height: none !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  padding: 2rem 1.5rem !important;
+}
+.ab-closing .ab-inner {
+  transform: none !important;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 !important;
+  text-align: center;
+}
+.ab-closing .ab-h2 {
+  font-size: clamp(1.85rem, 1.2rem + 2.4vw, 3rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 300 !important;
+  margin: 0 auto clamp(1.25rem, 2.5vw, 1.75rem) !important;
+  max-width: 720px;
+}
+.ab-closing-sub {
+  font-size: clamp(1rem, 0.85rem + 0.4vw, 1.2rem) !important;
+  line-height: 1.6 !important;
+  max-width: 620px;
+  margin: 0 auto !important;
+}

@@ -2504,3 +2504,150 @@ p.eyebrow em.th {
   position: relative;
   z-index: 1;
 }
+
+/* ============================================================
+   "Not for everyone" positioning coda
+   Sits below the two comparison columns as a quiet closing
+   thought. Restrained, not loud.
+   ============================================================ */
+.forwhom-coda {
+  max-width: 640px;
+  margin: clamp(3rem, 6vw, 4.5rem) auto 0;
+  text-align: center;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid rgba(13, 13, 13, 0.08);
+}
+.forwhom-coda-lead {
+  font-family: var(--font-display, 'Raleway', sans-serif);
+  font-size: clamp(1.05rem, 0.85rem + 0.6vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-accent);
+  margin: 0 0 0.9rem;
+  letter-spacing: 0.005em;
+}
+.forwhom-coda-body {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: clamp(0.9rem, 0.82rem + 0.2vw, 1rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(13, 13, 13, 0.62);
+  margin: 0;
+}
+@media (max-width: 640px) {
+  .forwhom-coda {
+    padding-top: 1.75rem;
+    margin-top: 2.25rem;
+  }
+}
+
+/* Compare section footnote — small italic line beneath the compare grid */
+.compare-footnote {
+  max-width: 620px;
+  margin: clamp(2.5rem, 5vw, 3.5rem) auto 0;
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: var(--text-xs, 0.85rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(13, 13, 13, 0.5);
+  letter-spacing: 0.005em;
+}
+
+/* CTA banner: centered alignment, matching the About page closing.
+   Restores visual balance so copy sits centered on the mountain imagery. */
+.section-cta-banner {
+  align-items: center !important;
+  padding-top: clamp(4rem, 8vh, 6rem) !important;
+  padding-bottom: clamp(4rem, 8vh, 6rem) !important;
+}
+
+/* True vertical centering for closing CTA banner — equal padding
+   top and bottom, ensures copy sits in the visual middle of the
+   viewport when scrolled to the bottom of the page. */
+.section-cta-banner {
+  padding-top: clamp(4rem, 12vh, 10rem) !important;
+  padding-bottom: clamp(4rem, 12vh, 10rem) !important;
+  align-items: center !important;
+}
+
+/* Constrain closing sections to exactly one viewport, cropping any
+   overflow, so what "center" means in CSS matches what user sees. */
+.section-cta-banner {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  align-items: center !important;
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+.section-cta-banner .cta-banner-content {
+  transform: translateY(6vh);
+}
+
+/* ============================================================
+   FINAL CLOSING SECTION STANDARD
+   Fills the viewport area ABOVE the footer, uses CSS Grid for
+   truly centered composition, unified font sizes across every
+   closing on every page.
+   ============================================================ */
+:root {
+  --footer-h: 152px;
+}
+.ab-closing,
+.section-cta-banner {
+  min-height: calc(100vh - var(--footer-h)) !important;
+  height: calc(100vh - var(--footer-h)) !important;
+  max-height: none !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.ab-closing .ab-inner,
+.section-cta-banner .cta-banner-content {
+  transform: none !important;
+  width: 100%;
+  max-width: 900px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+}
+/* Unified closing headline size */
+.ab-closing .ab-h2,
+.section-cta-banner h2 {
+  font-size: clamp(1.85rem, 1.2rem + 2.4vw, 3rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 300 !important;
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem) !important;
+}
+/* Unified closing subtitle size */
+.ab-closing-sub,
+.section-cta-banner .cta-banner-content p {
+  font-size: clamp(1rem, 0.85rem + 0.4vw, 1.2rem) !important;
+  line-height: 1.6 !important;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Brand mark inside buttons: inherit button's uppercase/spacing style,
+   never render italic. Applies to any button-like element. */
+.btn em.tml, .btn em.th,
+button em.tml, button em.th,
+a.btn em.tml, a.btn em.th,
+[class*="btn-"] em.tml, [class*="btn-"] em.th,
+.ab-cta-primary em.tml, .ab-cta-primary em.th,
+.ab-cta-secondary em.tml, .ab-cta-secondary em.th,
+.ab-cta-button em.tml, .ab-cta-button em.th {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: normal !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  color: inherit !important;
+}
