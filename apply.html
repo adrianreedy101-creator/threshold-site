@@ -11,6 +11,140 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./about.css">
   <link rel="stylesheet" href="./translate.css">
+  <style>
+    /* =====================================================
+       APPLY HERO — two-column layout matching
+       .ab-hero pattern (About, Missing Link, home).
+       Eyebrow lands at left=24, top~320 on desktop.
+       ===================================================== */
+    .apply-hero {
+      position: relative;
+      overflow: hidden;
+      background: #0D0D0D;
+      min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+    }
+    .apply-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .apply-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      opacity: 0.72;
+    }
+    .apply-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.7) 60%, rgba(13,13,13,0.85) 100%);
+    }
+
+    /* Grid: content sits flush-left via padding, no container centering.
+       Padding recipe MATCHES .ab-hero-content so the eyebrow lands at
+       left=24 (space-6) and top~320 on desktop. */
+    .apply-hero-grid {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      gap: clamp(2.5rem, 5vw, 5rem);
+      align-items: start;
+      padding: clamp(13rem, 26vh, 22rem) var(--space-6) var(--space-16);
+    }
+
+    @media (max-width: 900px) {
+      .apply-hero {
+        min-height: auto;
+        align-items: flex-start;
+      }
+      .apply-hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        padding: clamp(7rem, 15vh, 11rem) var(--space-6) var(--space-16);
+      }
+    }
+
+    /* LEFT column — sticky on desktop so copy stays visible while user
+       scrolls the tall form on the right. */
+    .apply-intro-col {
+      position: sticky;
+      top: clamp(7rem, 15vh, 11rem);
+    }
+    @media (max-width: 900px) {
+      .apply-intro-col {
+        position: static;
+      }
+    }
+
+    .apply-eyebrow {
+      font-family: 'Raleway', sans-serif;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #fcb141;
+      margin: 0 0 var(--space-6);
+    }
+
+    .apply-heading {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.875rem, 1rem + 2.2vw, 3.125rem);
+      font-weight: 200;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      margin: 0 0 var(--space-6);
+      text-wrap: balance;
+    }
+
+    .apply-intro {
+      font-family: 'Raleway', sans-serif;
+      font-size: var(--text-base);
+      font-weight: 300;
+      color: rgba(240, 240, 240, 0.85);
+      line-height: 1.65;
+      margin: 0 0 var(--space-6);
+      max-width: 540px;
+      text-wrap: balance;
+    }
+
+    .apply-intro-fine {
+      font-family: 'Raleway', sans-serif;
+      font-size: var(--text-sm);
+      color: rgba(240, 240, 240, 0.55);
+      margin: 0 0 var(--space-8);
+    }
+
+    /* Language note: left-align inside the copy column
+       (overrides the centered pill style from translate.css) */
+    .apply-intro-col .consult-lang-note {
+      margin: 0 !important;
+      text-align: left !important;
+      display: inline-block;
+    }
+
+    /* RIGHT column: form container, min-width:0 prevents field overflow */
+    .apply-form-col {
+      min-width: 0;
+    }
+
+    /* When success state shows, span across both columns and center */
+    .apply-hero-grid .form-success {
+      grid-column: 1 / -1;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -33,15 +167,15 @@
     </button>
   </nav>
 
-  <!-- FORM SECTION -->
-  <section class="section-form" id="applyForm" style="position:relative; overflow:hidden; padding-top:clamp(6rem,12vw,10rem); background:#0D0D0D;">
-    <!-- Warm mountain image matched to the homepage hero (0.72 opacity, center 35% crop) -->
-    <div style="position:absolute; inset:0; z-index:0; pointer-events:none;">
-      <img src="./assets/hero-1.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center 35%; opacity:0.72;">
-      <!-- Subtle gradient so the form fields stay legible over the image -->
-      <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(13,13,13,0.55) 0%, rgba(13,13,13,0.7) 60%, rgba(13,13,13,0.85) 100%);"></div>
+  <!-- ============ APPLY HERO (two-column: copy left, form right) ============ -->
+  <section class="apply-hero" id="applyForm">
+    <!-- Warm mountain image matched to the homepage hero -->
+    <div class="apply-hero-bg" aria-hidden="true">
+      <img src="./assets/hero-1.webp" alt="">
+      <div class="apply-hero-overlay"></div>
     </div>
-    <div class="container container--narrow" style="position:relative; z-index:1;">
+
+    <div class="apply-hero-grid">
       <!-- Success state (hidden by default) -->
       <div class="form-success" id="formSuccess" style="display:none;">
         <div class="success-icon">
@@ -57,18 +191,18 @@
         <a class='btn-outline' href='/' style='margin-top: 2rem;'>Return home →</a>
       </div>
 
-      <!-- The form -->
-      <div id="applyFormWrap">
-        <div style="text-align:center; margin-bottom:clamp(2rem,4vw,3rem);">
-          <p style="font-size:var(--text-xs); font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#fcb141; margin-bottom:1rem;">The Gate</p>
-          <h1 style="font-family:'Raleway',sans-serif; font-size:clamp(1.875rem,1rem + 2.2vw,3.125rem); font-weight:200; text-transform:uppercase; color:#fff; letter-spacing:0.015em; line-height:1.1; margin-bottom:1.5rem;">Apply for Threshold</h1>
-          <p style="font-size:var(--text-base); color:rgba(240,240,240,0.85); line-height:1.65; max-width:600px; margin:0 auto;">You're not "buying coaching." You're requesting entry into an exclusive container, with no more than two people at any time, for those who are done managing their limits.</p>
-          <p style="font-size:var(--text-base); color:rgba(240,240,240,0.85); line-height:1.65; max-width:600px; margin:1rem auto 0;">The form below takes 3 minutes. I read every submission myself. If there's a fit, you'll hear from me within 72 hours to schedule a brief call.</p>
-          <p style="font-size:var(--text-sm); color:rgba(240,240,240,0.45); margin-top:0.75rem;">No sales call. No obligation. Just a conversation.</p>
-        </div>
-        
-          <p class="consult-lang-note">A note: the discovery call and the 90-day work happen in English.</p>
+      <!-- LEFT: copy column -->
+      <div class="apply-intro-col" id="applyIntroCol">
+        <p class="apply-eyebrow">The Gate</p>
+        <h1 class="apply-heading">Apply for Threshold</h1>
+        <p class="apply-intro">You are not "buying coaching." You are requesting entry into a 90-day intensive, with no more than two people at any time, for those who are done guessing at what has been driving them.</p>
+        <p class="apply-intro">The form takes 3 minutes. I read every submission myself. If there is a fit, you will hear from me within 72 hours to schedule a brief call.</p>
+        <p class="apply-intro-fine">No sales call. No obligation. Just a conversation.</p>
+        <p class="consult-lang-note">A note: the discovery call and the 90-day work happen in English.</p>
+      </div>
 
+      <!-- RIGHT: form column -->
+      <div class="apply-form-col" id="applyFormWrap">
         <form class="apply-form" id="thresholdForm" novalidate>
 
           <div class="form-group">
@@ -168,5 +302,332 @@
   <script src="script.js"></script>
   <script src="./translate.js" defer></script>
   <script src="./page-transitions.js" defer></script>
-</body>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+</script></body>
 </html>

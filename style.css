@@ -2651,3 +2651,62 @@ a.btn em.tml, a.btn em.th,
   text-transform: inherit !important;
   color: inherit !important;
 }
+
+
+/* =====================================================
+   UNIFIED DARK-IMAGE OVERLAYS (Aug 2, 2026)
+   One gradient recipe for every dark-image section across
+   both sites — from the .ab-quote-banner recipe on the
+   TML threshold explainer page. Portrait visible, gentle
+   at edges, lightest at the face.
+   ===================================================== */
+
+/* Kill any image dimming on dark-image sections — let the photo breathe */
+.ab-bg img,
+.ab-hero-bg img,
+.ab-quote-bg img,
+.ab-cta-bg img,
+.audience-bg img,
+.comparison-bg img,
+.cta-banner-bg img,
+.hero-bg img,
+.quote-banner-bg img {
+  opacity: 1 !important;
+}
+
+/* One gradient to rule them all — soft top, lightest at 50%, soft bottom */
+.ab-bg-overlay,
+.ab-hero-overlay,
+.ab-quote-overlay,
+.ab-cta-overlay,
+.audience-overlay,
+.comparison-overlay,
+.cta-banner-overlay,
+.hero-overlay,
+.quote-banner-overlay,
+.ab-pullquote.ab-section-bg .ab-bg-overlay,
+.ab-section-bg .ab-bg-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 18, 0.65) 0%,
+    rgba(10, 12, 18, 0.45) 50%,
+    rgba(8, 12, 18, 0.7) 100%
+  ) !important;
+}
+
+/* Pull-quote sections: give them room to breathe (matches .ab-quote-banner) */
+.ab-pullquote.ab-section-bg,
+.ab-pullquote {
+  min-height: 60vh;
+  padding-top: clamp(5rem, 8vw, 7rem) !important;
+  padding-bottom: clamp(5rem, 8vw, 7rem) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 700px) {
+  .ab-pullquote.ab-section-bg,
+  .ab-pullquote {
+    min-height: 50vh;
+  }
+}
