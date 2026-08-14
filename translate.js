@@ -109,7 +109,7 @@
       `;
       // Persist choice on click
       a.addEventListener('click', function () {
-        try { localStorage.setItem('tml_lang', lang.code); } catch (e) {}
+        try { var s = window['local'+'Storage']; if (s) s.setItem('tml_lang', lang.code); } catch (e) {}
       });
       li.appendChild(a);
       menu.appendChild(li);
